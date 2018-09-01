@@ -1,1 +1,0 @@
-SQLite: https://github.com/khairul169/gdsqlite-native 

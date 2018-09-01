@@ -1,0 +1,12 @@
+{
+  "plants": [
+    {
+      "id" : "675a104d-bbdb-48e8-ab24-6bf8b9632287",
+      "name" : "corn"
+    },
+    {
+      "id" : "5eb365c7-e133-40de-8263-63611f05f2de",
+      "name" : "wheat"
+    }
+  ]
+}
