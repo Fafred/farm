@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Temp/concrete_green.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Temp/concrete_green_n.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Temp/dirt.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Temp/dirt_n.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Temp/dirt_podzol_top.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Temp/dirt_podzol_top_n.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Temp/slime.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Temp/slime_n.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Temp/concrete_gray.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Temp/concrete_gray_n.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Temp/concrete_powder_blue.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Temp/concrete_powder_blue_n.png" type="Texture" id=12]
+
+[node name="TileMap" type="TileMap"]
+
+mode = 0
+tile_set = null
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+
+[node name="1" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+normal_map = ExtResource( 2 )
+
+[node name="2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 65.1432, 0.397209 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 4 )
+
+[node name="3" type="Sprite" parent="." index="2"]
+
+position = Vector2( 131.875, 0.794426 )
+texture = ExtResource( 5 )
+normal_map = ExtResource( 6 )
+
+[node name="4" type="Sprite" parent="." index="3"]
+
+position = Vector2( 200.593, 0.794426 )
+texture = ExtResource( 7 )
+normal_map = ExtResource( 8 )
+
+[node name="5" type="Sprite" parent="." index="4"]
+
+position = Vector2( 270.106, 1.19164 )
+texture = ExtResource( 1 )
+normal_map = ExtResource( 2 )
+
+[node name="6" type="Sprite" parent="." index="5"]
+
+position = Vector2( 343.59, 2.38329 )
+texture = ExtResource( 9 )
+normal_map = ExtResource( 10 )
+
+[node name="7" type="Sprite" parent="." index="6"]
+
+position = Vector2( -1.19159, 73.8819 )
+texture = ExtResource( 11 )
+normal_map = ExtResource( 12 )
+
+

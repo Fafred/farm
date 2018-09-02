@@ -34,6 +34,6 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("move_left"):
 		direction += LEFT
 
-	var velocity = speed * direction * delta
+	var velocity = speed * direction.normalized() * delta
 	move_and_collide(velocity)
 #endfunc
