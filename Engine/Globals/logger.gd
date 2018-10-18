@@ -12,7 +12,7 @@ const KEY_DATA = "key_data"
 const KEY_TIME = "key_time"
 
 ### SIGNALS ###
-signal error #	error(error type, data)
+signal error #	error(error type, data)  # Emmitted for warnings, logs, and errors.
 
 var _print_settings = {	TYPE_WARNING	:	true,
 						TYPE_ERROR		:	true,
