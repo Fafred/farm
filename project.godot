@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 
 LOG="*res://Engine/Globals/logger.tscn"
 UUID="*res://Engine/Globals/uuid.tscn"
+CLOCK="*res://Engine/Globals/world_clock.tscn"
 
 [input]
 

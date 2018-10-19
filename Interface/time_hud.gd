@@ -25,6 +25,10 @@ onready var rain_night = "res://Assets/timeandweather_15.png"
 
 onready var paths = [ [ fine_dawn, fine_day, fine_sunset, fine_night ], [ cloudy_dawn, cloudy_day, cloudy_sunset, cloudy_night ], [ overcast_dawn, overcast_day, overcast_sunset, overcast_night ], [ rain_dawn, rain_day, rain_sunset, rain_night ] ]
 
+func _ready():
+	CLOCK.connect("time_changed", self, "_on_time_changed")
+#endfunc
+
 func on_environment_change(environment):
 	var hour = environment["h"]
 	var minute = environment["m"]
@@ -45,27 +49,25 @@ var temp_weather = 0
 var hour = 0
 var minute = 0
 
-func _on_Timer_timeout():
+func _on_time_changed():
+	# _on_time_changed
+	#	Called when the CLOCK emits the time_changed signal.  Updates the HUD
+	#		clock to display the current time.
 
-	minute += 15
+	var hour = CLOCK.get_hour()
+	var minute = CLOCK.get_minute()
+	var temp_time = DAY_SEGMENT.DAY
+	var weather = 0
 
-	if minute >= 60:
-		minute = 0
+	if hour < 5 or hour > 22:
+		temp_time = DAY_SEGMENT.NIGHT
+		weather = randi() % 4
+	elif hour > 4 and hour < 8:
+		temp_time = DAY_SEGMENT.DAWN
+		weather = randi() % 4
+	elif hour > 19 and hour < 23:
+		temp_time = DAY_SEGMENT.SUNSET
+		weather = randi() % 4
 
-		hour += 1
-
-		if hour > 23:
-			hour = 0
-
-
-	temp_time += 1
-
-	if temp_time > 3:
-		temp_time = 0
-		temp_weather += 1
-
-		if temp_weather > 3:
-			temp_weather = 0
-
-
-	on_environment_change({"h": hour, "m": minute, "day_segment": temp_time, "weather": temp_weather})
+	if minute % 10 == 0:
+		on_environment_change({"h": hour, "m": minute, "day_segment": temp_time, "weather": temp_weather})

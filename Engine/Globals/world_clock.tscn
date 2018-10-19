@@ -5,8 +5,7 @@
 [node name="world_clock" type="Node" index="0"]
 
 script = ExtResource( 1 )
-minute_length_in_seconds = 0.7
-autostart = true
+minute_length_s = 0.7
 
 [node name="Timer - Minute" type="Timer" parent="." index="0"]
 
