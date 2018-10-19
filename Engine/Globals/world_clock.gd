@@ -207,6 +207,7 @@ func _on_timeout():
 	#	day_tick(day value):		day value has changed
 	#	month_tick(month value):	month value has changed
 	#	year_tick(year value):		year value has changed
+	#	time_changed:				time has changed.
 
 	var do_hour_tick = false
 	var do_day_tick = false
