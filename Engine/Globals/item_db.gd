@@ -123,7 +123,7 @@ func get_data(item_uuid, data_key = null, do_get_template_data = true):
 		# Does the item have a template
 		elif do_get_template_data == true and _items[item_uuid].has(KEY_ITEM_TEMPLATE):
 			# Yes, so attempt to retrieve the data from the template db.
-			template_key = _items[item_uuid][KEY_ITEM_TEMPLATE]
+			var template_key = _items[item_uuid][KEY_ITEM_TEMPLATE]
 
 			# Does the key actually exist, though?
 			if _item_templates.has(template_key):
