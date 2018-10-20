@@ -28,15 +28,15 @@ func _ready():
 	self.connect("error", self, "_on_error")
 #endfunc
 
-func warning(node, function_name, error_text, data):
+func warning(node, function_name, error_text, data = null):
 	self._log(TYPE_WARNING, node, function_name, error_text, data)
 #endfunc
 
-func error(node, function_name, error_text, data):
+func error(node, function_name, error_text, data = null):
 	self._log(TYPE_ERROR, node, function_name, error_text, data)
 #endfunc
 
-func logg(node, function_name, error_text, data):
+func logg(node, function_name, error_text, data = null):
 	self._log(TYPE_LOG, node, function_name, error_text, data)
 #endfunc
 
@@ -74,10 +74,12 @@ func _on_error(error_type, error_data):
 						error_data[KEY_ERROR_TEXT]
 					]
 
-	for key in error_data[KEY_DATA].keys():
-		error_string += "\n\t\t> %s : %s" % [	key,
-											error_data[KEY_DATA][key]]
-	#endfor
+	if error_data != null:
+		for key in error_data[KEY_DATA].keys():
+			error_string += "\n\t\t> %s : %s" % [	key,
+												error_data[KEY_DATA][key]]
+		#endfor
+	#endif
 
 	if _print_settings.has(error_type) and _print_settings[error_type] == true:
 		print(error_string)
